@@ -1,0 +1,57 @@
+@function getRotate($i) {
+  @return rotate(($i - 1) * 30deg + 0deg);
+}
+@function delay($i) {
+	@if $i == 1 {
+		@return 0s;
+	} @else {
+		@return -1.7467s + ($i * 0.083s);
+	}
+}
+.loading {
+	background-color: #f1f1f1;
+	z-index: 99999;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	-webkit-box-align: center;
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/
+	.spinner {
+		position: relative;
+		width: 60px;
+		height: 60px;
+		opacity: 0.8;
+		div {
+			animation: fade 1s linear infinite;
+			position: absolute;
+			left: 44.5%;
+			top: 37%;
+			width: 12%;
+			height: 26%;
+			background-color: #ff397e;
+			opacity: 0;
+			border-radius: 30%;
+			@for $i from 1 through 12 {
+				&.bar-#{$i} {
+					transform: getRotate($i) translate(0, -142%);
+					animation-delay: delay($i);
+				}
+			}
+		}
+	}
+}
+
+@keyframes fade{
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.25;
+	}
+}

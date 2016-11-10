@@ -1,0 +1,73 @@
+.loading {
+  background-color: #f1f1f1;
+  z-index: 99999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/ }
+  .loading .spinner {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    opacity: 0.8; }
+    .loading .spinner div {
+      animation: fade 1s linear infinite;
+      position: absolute;
+      left: 44.5%;
+      top: 37%;
+      width: 12%;
+      height: 26%;
+      background-color: #ff397e;
+      opacity: 0;
+      border-radius: 30%; }
+      .loading .spinner div.bar-1 {
+        transform: rotate(0deg) translate(0, -142%);
+        animation-delay: 0s; }
+      .loading .spinner div.bar-2 {
+        transform: rotate(30deg) translate(0, -142%);
+        animation-delay: -1.5807s; }
+      .loading .spinner div.bar-3 {
+        transform: rotate(60deg) translate(0, -142%);
+        animation-delay: -1.4977s; }
+      .loading .spinner div.bar-4 {
+        transform: rotate(90deg) translate(0, -142%);
+        animation-delay: -1.4147s; }
+      .loading .spinner div.bar-5 {
+        transform: rotate(120deg) translate(0, -142%);
+        animation-delay: -1.3317s; }
+      .loading .spinner div.bar-6 {
+        transform: rotate(150deg) translate(0, -142%);
+        animation-delay: -1.2487s; }
+      .loading .spinner div.bar-7 {
+        transform: rotate(180deg) translate(0, -142%);
+        animation-delay: -1.1657s; }
+      .loading .spinner div.bar-8 {
+        transform: rotate(210deg) translate(0, -142%);
+        animation-delay: -1.0827s; }
+      .loading .spinner div.bar-9 {
+        transform: rotate(240deg) translate(0, -142%);
+        animation-delay: -0.9997s; }
+      .loading .spinner div.bar-10 {
+        transform: rotate(270deg) translate(0, -142%);
+        animation-delay: -0.9167s; }
+      .loading .spinner div.bar-11 {
+        transform: rotate(300deg) translate(0, -142%);
+        animation-delay: -0.8337s; }
+      .loading .spinner div.bar-12 {
+        transform: rotate(330deg) translate(0, -142%);
+        animation-delay: -0.7507s; }
+
+@keyframes fade {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0.25; } }
+
+/*# sourceMappingURL=loading.css.map */
