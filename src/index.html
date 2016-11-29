@@ -1,46 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- [[编码 -->
-    <meta charset="gb2312">
-    <!-- 编码]] -->
-    <!-- [[360双核默认以webkit渲染 -->
+    <meta charset="utf-8">
     <meta name="renderer" content="webkit">
-    <!-- 360双核默认以webkit渲染]] -->
-    <!-- [[IE以最高版Edge渲染 -->
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <!-- [[不缓存 -->
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
-    <!-- 不缓存]] -->
-    <!-- [[强制页面宽度与设备比1:1,缩放1,,不允许用户缩放 -->
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
-    <!-- 强制页面宽度与设备比1:1,缩放1,,不允许用户缩放]] -->
-    <!-- [[数字不启用电话邮箱功能 -->
     <meta content="telephone=no,email=no" name="format-detection">
-    <!-- 数字不启用电话邮箱功能]] -->
-    <!-- [[touch满屏 -->
     <meta name="apple-touch-fullscreen" content="yes">
-    <!-- touch满屏]] -->
-    <!-- [[开启 web app 功能: 顶部状态条样式;添加到主屏幕的标题、图片icon -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="webpack">
-    <link rel="apple-touch-icon-precomposed" href="./images/webpack.png">
-    <!-- 开启 web app 功能]] -->
-    <!-- [[TDK -->
-    <title></title>
-    <meta name="description" content="">
+    <meta name="apple-mobile-web-app-title" content="">
+    <link rel="apple-touch-icon" href="">
+    <title>RainJoy's Blog</title>
+    <link rel="shortcut icon" href="/favicon/RainJoy.ico">
     <meta name="keywords" content="">
-    <!-- TDK]] -->
-    <!-- [[favicon -->
-    <link rel="icon" href="favicon/nupt.ico" type="image/x-icon">
-    <!-- favicon]] -->
+    <meta name="description" content="">
 </head>
 <body id="index">
-	<div class="container">
-	    <h1>RainJoy1993</h1>
-        <img src="./images/webpack.png">
+    <div class="loading">
+        <div class="spinner">
+            <div class="bar-1"></div>
+            <div class="bar-2"></div>
+            <div class="bar-3"></div>
+            <div class="bar-4"></div>
+            <div class="bar-5"></div>
+            <div class="bar-6"></div>
+            <div class="bar-7"></div>
+            <div class="bar-8"></div>
+            <div class="bar-9"></div>
+            <div class="bar-10"></div>
+            <div class="bar-11"></div>
+            <div class="bar-12"></div>
+        </div>
+    </div>
+    <h1>RainJoy1993</h1>
+    <img src="./images/webpack.png" width="100%">
+    <div class="container">
+        <div class="left-tab"></div>
+        <script id="left-tab" type="text/x-handlebars-template">
+            <ul>
+                {{each tab}}
+                    {{if $index}}
+                        <li class="tab-item">{{$value.name}}</li>
+                    {{else}}
+                        <li class="tab-item hover">{{$value.name}}</li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </script>
+        <div class="right-list"></div>
+        <script id="right-list" type="text/x-handlebars-template">
+            {{each tab as value i}}
+                {{if i}}
+                    <ul class="list-item">
+                        {{each value.list}}
+                            <li><a href="/article.html?id={{$value.id}}">{{$index+1}}.{{$value.title}}</a></li>
+                        {{/each}}
+                    </ul>
+                {{else}}
+                    <ul class="list-item hover">
+                        {{each value.list}}
+                            <li><a href="/article.html?id={{$value.id}}">{{$index+1}}.{{$value.title}}</a></li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            {{/each}}
+        </script>
     </div>
 </body>
 </html>

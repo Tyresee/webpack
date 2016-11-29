@@ -38,7 +38,7 @@ const dist = isPrd ? 'build' : 'dev'
 log.info('file is :', dist);
 const filename = isPrd ? `[hash:7]-[name]` : `[name]`
 // 最终服务器路径
-const publicPath = '//st.haiziwang.com/exp/'
+const publicPath = '/'
 /* 定义一些常量]] */
 
 /* 核心功能[[ */
@@ -77,7 +77,7 @@ const plugins = [
         port: 9090,
         notify: true,
         ui: false,
-        server: { baseDir: [`${dist}`] }
+        server: { baseDir: dist }
     }),
     new CleanWebpackPlugin(['dev'], {
         root: __dirname,

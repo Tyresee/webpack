@@ -11,7 +11,21 @@
 	@return $x*$y
 };
 // 边框1px问题
-@mixin border($border: 1px solid red, $radius: 30px, $background: #fff) {
+// rem，页面中要设置root
+@function rem($px) {
+	@return $px/100px + rem
+};
+// 除法
+@function division($x, $y) {
+	@return $x/$y
+};
+// 乘法
+@function multiply($x, $y) {
+	@return $x*$y
+};
+// 边框1px问题
+$i-list: 1, 1.5, 2, 2.5, 3, 3.5, 4;
+@mixin border($border: 1px solid red, $radius: 10px, $background: #fff, $z-index: 2) {
 	position: relative;
 	border-radius: rem($radius);
 	background: $background;
@@ -24,15 +38,17 @@
 		transform-origin: left top;
 		box-sizing: border-box;
 		border: $border;
+		z-index: $z-index;
 	}
-	@for $i from 1 through 3 {
+	@each $i in $i-list {
 		@media (-webkit-min-device-pixel-ratio:$i) {
 			&::after {
 				transform: scale(division(1, $i));
+				border-radius: rem(multiply($radius, $i));
 				width: multiply(100%, $i);
 				height: multiply(100%, $i);
-				border-radius: rem(multiply($radius, $i));
 			}
 		}
 	}
 }
+

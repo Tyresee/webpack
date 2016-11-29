@@ -1,7 +1,60 @@
 @import 'reset';
 @import 'mixin';
 @import 'common';
+
 body {
-  background-color: #f4f4f4;
-  text-align: center;
+	background-color: #f4f4f4;
+}
+h1 {
+	font-size: rem(24px);
+	text-align: center;
+}
+#index .container {
+	text-align: center;
+	display: flex;
+	position: absolute;
+	width: 100%;
+	.left-tab {
+		flex: 1;
+		width: 0;
+		display: block;
+		.tab-item {
+			font-size: rem(26px);
+			padding: rem(36px) 0;
+			text-align: center;
+			color: #fff;
+			background: #8F95E4;
+			&.hover {
+				animation: hover 0.6s;
+				background: #ff397e;
+			}
+		}
+	}
+	@keyframes hover {
+		0% {
+			background: #8F95E4;
+		}
+		100% {
+			background: #ff397e;
+		}
+	}
+	.right-list {
+		flex: 3;
+		width: 0;
+		display: block;
+		padding: rem(30px) rem(30px) 0 rem(50px);
+		.list-item {
+			display: none;
+			text-align: left;
+			li {
+				margin-bottom: rem(20px);
+				font-size: rem(36px);
+				line-height: rem(36px);
+				color: #E806F7;
+			}
+			&.hover {
+				display: block;
+			}
+		}
+	}
 }
